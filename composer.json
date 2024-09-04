@@ -2,8 +2,8 @@
   "name": "foodcrud/foodcrud-site",
   "authors": [
     {
-      "name": "Duy Tuong TRUONG",
-      "email": "20020560@students.koi.edu.au"
+      "name": "author 1",
+      "email": "author1@gmail.com"
     }
   ],
   "autoload": {
