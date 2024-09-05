@@ -16,8 +16,10 @@ $router->addRoute('registerUser', ['controller' => 'Register', 'action' => 'regi
 
 
 
-$router->addRoute('admin/home', ['controller' => 'Dashboard', 'action' => 'home']);
-$router->addRoute('admin/home/add-recipe', ['controller' => 'Recipe', 'action' => 'addRecipe']);
+$router->addRoute('admin/recipe', ['controller' => 'Recipe', 'action' => 'recipeAdmin']);
+$router->addRoute('admin/recipe/add-recipe', ['controller' => 'Recipe', 'action' => 'viewAddRecipe']);
+$router->addRoute('admin/recipe/add-data-recipe', ['controller' => 'Recipe', 'action' => 'addRecipe']);
+$router->addRoute('admin/recipe/uploadImageCk', ['controller' => 'Recipe', 'action' => 'uploadFileCkEditor']);
 
 
 

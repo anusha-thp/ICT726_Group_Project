@@ -21,11 +21,18 @@ require_once APPROOT . '/src/views/admin/include/header.php';
             </ul>
         </div>
     </div>
-
+    <?php if(isset($data, $data["status"], $data["message"])): ?>
+    <div class="box-info">
+        <div class="message-<?= $data["status"] ?>">
+            <p><?= $data["message"] ?></p>
+        </div>
+    </div>
+    <?php endif; ?>
     <div class="table-data">
+        
         <div class="formRecipe-main-wrapper">
             <div class="formRecipe-form-wrapper">
-                <form action="#" method="POST">
+                <form action="<?= URLROOT ?>/admin/recipe/add-data-recipe" method="POST" enctype="multipart/form-data">
                     <div class="formRecipe-steps">
                         <ul>
                             <li class="formRecipe-step-menu1 active">
@@ -64,12 +71,19 @@ require_once APPROOT . '/src/views/admin/include/header.php';
                                     class="formRecipe-form-input" />
                             </div>
                         </div>
-
+                        <div>
+                            <label for="recommend" class="formRecipe-form-label">Recommended Recipe:</label>
+                            <select name="recommend" id="recommend" class="formRecipe-form-input">
+                                <option value="0">Do you want recipe recommend?</option>
+                                <option value="1">NO</option>
+                                <option value="2">YES</option>
+                            </select>
+                        </div>
                         <div>
                             <label for="description" class="formRecipe-form-label"> Description </label>
                             <textarea
                                 rows="6"
-                                name="Description"
+                                name="description"
                                 id="description"
                                 placeholder="Type your Description"
                                 class="formRecipe-form-input"></textarea>
@@ -92,13 +106,8 @@ require_once APPROOT . '/src/views/admin/include/header.php';
                             <div>
                                 <button class="formRecipe-confirm-btn active">
                                     <i class='bx bxs-check-circle'></i>
-                                    Yes! I want it.
-                                </button>
-
-                                <button class="formRecipe-confirm-btn">
-                                    <i class='bx bxs-check-circle'></i>
-                                    No! I don’t want it.
-                                </button>
+                                    Save.
+                                </button>                     
                             </div>
                         </div>
                     </div>
@@ -122,7 +131,7 @@ require_once APPROOT . '/src/views/admin/include/header.php';
 
 <script>
     CKEDITOR.replace('editor', {
-        filebrowserUploadUrl: '/uploader/upload.php', // Change to your upload URL
+        filebrowserUploadUrl: '<?= URLROOT ?>/admin/recipe/uploadImageCk', // Change to your upload URL
         filebrowserUploadMethod: 'form'
     });
 </script>

@@ -379,7 +379,12 @@ body {
 #content main .box-info li .text p {
   color: var(--dark);
 }
-
+#content main .box-info .message-error {
+  color: red;
+}
+#content main .box-info .message-success {
+  color: rgb(33, 116, 0);
+}
 #content main .table-data {
   display: flex;
   flex-wrap: wrap;
@@ -426,6 +431,7 @@ body {
 #content main .table-data .order table td {
   padding: 16px 0;
 }
+
 #content main .table-data .order table tr td:first-child {
   display: flex;
   align-items: center;
@@ -435,7 +441,6 @@ body {
 #content main .table-data .order table td img {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
   object-fit: cover;
 }
 #content main .table-data .order table tbody tr:hover {
@@ -457,7 +462,14 @@ body {
 #content main .table-data .order table tr td .status.pending {
   background: var(--orange);
 }
-
+#content main .table-data .order table tr td .status.error {
+  background: var(--red);
+}
+#content main .table-data .order table tr td button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
 #content main .table-data .todo {
   flex-grow: 1;
   flex-basis: 300px;

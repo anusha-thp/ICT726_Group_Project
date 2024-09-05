@@ -76,9 +76,8 @@ const formBackBtn = document.querySelector(".formRecipe-back-btn");
 
 formSubmitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  if (stepMenuOne.className == "formRecipe-step-menu1 active") {
-    event.preventDefault();
 
+  if (stepMenuOne.classList.contains("active")) {
     stepMenuOne.classList.remove("active");
     stepMenuTwo.classList.add("active");
 
@@ -86,29 +85,36 @@ formSubmitBtn.addEventListener("click", function (event) {
     stepTwo.classList.add("active");
 
     formBackBtn.classList.add("active");
-    formBackBtn.addEventListener("click", function (event) {
-      event.preventDefault();
-
-      stepMenuOne.classList.add("active");
-      stepMenuTwo.classList.remove("active");
-
-      stepOne.classList.add("active");
-      stepTwo.classList.remove("active");
-
-      formBackBtn.classList.remove("active");
-    });
-  } else if (stepMenuTwo.className == "formRecipe-step-menu2 active") {
-    event.preventDefault();
-
+  } else if (stepMenuTwo.classList.contains("active")) {
     stepMenuTwo.classList.remove("active");
     stepMenuThree.classList.add("active");
 
     stepTwo.classList.remove("active");
     stepThree.classList.add("active");
 
+    formSubmitBtn.style.display = "none";
+  } else if (stepMenuThree.classList.contains("active")) {
+  }
+});
+
+formBackBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  if (stepMenuTwo.classList.contains("active")) {
+    stepMenuTwo.classList.remove("active");
+    stepMenuOne.classList.add("active");
+
+    stepTwo.classList.remove("active");
+    stepOne.classList.add("active");
+
     formBackBtn.classList.remove("active");
-    formSubmitBtn.textContent = "Submit";
-  } else if (stepMenuThree.className == "formRecipe-step-menu3 active") {
-    document.querySelector("form").submit();
+  } else if (stepMenuThree.classList.contains("active")) {
+    stepMenuThree.classList.remove("active");
+    stepMenuTwo.classList.add("active");
+
+    stepThree.classList.remove("active");
+    stepTwo.classList.add("active");
+
+    formSubmitBtn.style.display = "block";
   }
 });

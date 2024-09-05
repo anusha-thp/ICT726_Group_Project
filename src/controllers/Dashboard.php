@@ -13,8 +13,5 @@ class Dashboard
         exit();
       }
   }
-  public function home()
-  {
-    view('admin/dashboard');
-  }
+
 }

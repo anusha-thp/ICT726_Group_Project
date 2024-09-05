@@ -5,8 +5,7 @@
 - Handling databases with PDO
 
 ## Installation
-1. Download as .zip or clone this repo using  
-`git clone https://github.com/thanhbui27/foodcrud.git`  
+1. Download as .zip or clone this
 2. Import the `data/{name_db}.sql` file to phpMyAdmin
 3. Install composer  
 https://getcomposer.org/download/

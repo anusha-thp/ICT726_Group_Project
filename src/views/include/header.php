@@ -60,7 +60,7 @@
           </li>
           <?php if(isset($_SESSION["user"]) && $_SESSION["user"]["role"] === 'admin'): ?>
             <li class="toggle">
-		         <a href="<?= URLROOT ?>/admin/home" class="navbar-link">Admin</a>
+		         <a href="<?= URLROOT ?>/admin/recipe" class="navbar-link">Admin</a>
             </li>
             <?php endif; ?>
           <?php if(isset($_SESSION["user"])): ?>
@@ -121,7 +121,7 @@
         <p  class="btn btn-primary dropbtn">Hello <?= $_SESSION["user"]["username"] ?></p>
         <div class="dropdown-content">
            <?php if(isset($_SESSION["user"]) && $_SESSION["user"]["role"] === 'admin'): ?>
-		         <a href="<?= URLROOT ?>/admin/home" class="navbar-link">Admin</a>
+		         <a href="<?= URLROOT ?>/admin/recipe" class="navbar-link">Admin</a>
             <?php endif; ?>
           <a href="<?= URLROOT ?>/logOut" class="navbar-link">LogOut</a>       
         </div>

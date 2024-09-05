@@ -6,7 +6,7 @@
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="<?= URLROOT ?>/admin/home" >
+				<a href="<?= URLROOT ?>/admin/recipe" >
 					<i class='bx bxs-shopping-bag-alt' ></i>
 					<span class="text">Recipes</span>
 				</a>
