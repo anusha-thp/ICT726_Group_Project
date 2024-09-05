@@ -15,11 +15,14 @@
   <div class="wrapper">
     <h1>Hello Again!</h1>
     <p>Welcome back you've <br> been missed!</p>
-    <form>
-      <input type="text" placeholder="Enter username">
-      <input type="password" placeholder="Password">
+    <?php if(isset($data["message"])): ?>
+      <p class="error-message"><?= $data["message"] ?></p>
+    <?php endif; ?>
+    <form action="<?= URLROOT ?>/loginUser" method="POST">
+      <input type="text" placeholder="Enter username" name="username">
+      <input type="password" placeholder="Password" name="password">
+      <button type="submit">Sign in</button>
     </form>
-    <button>Sign in</button>
     <p class="or">
       ----- or continue with -----
     </p>

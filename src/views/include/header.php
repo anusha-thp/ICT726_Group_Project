@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= URLROOT ?>/css/reset.css">
-  <link rel="stylesheet" href="<?= URLROOT ?>/css/style.css">
+  <link rel="stylesheet" href="<?= URLROOT ?>/css/style.css?<?= time() ?>">
 
 </head>
 
@@ -56,9 +56,22 @@
           </li>
 
           <li>
-		  <a href="<?= URLROOT ?>/contact" class="navbar-link">Contact</a>
+		    <a href="<?= URLROOT ?>/contact" class="navbar-link">Contact</a>
           </li>
-
+          <?php if(isset($_SESSION["user"]) && $_SESSION["user"]["role"] === 'admin'): ?>
+            <li class="toggle">
+		         <a href="<?= URLROOT ?>/admin/home" class="navbar-link">Admin</a>
+            </li>
+            <?php endif; ?>
+          <?php if(isset($_SESSION["user"])): ?>
+            <li class="toggle">
+		         <a href="<?= URLROOT ?>/logOut" class="navbar-link">LogOut</a>
+            </li>
+          <?php else: ?>
+            <li class="toggle">
+		         <a href="<?= URLROOT ?>/login" class="navbar-link">Login</a>
+            </li>
+          <?php endif; ?>
         </ul>
 
         <div class="wrapper">
@@ -102,8 +115,21 @@
         </ul>
 
       </nav>
-
-      <a href="#" class="btn btn-primary">Explore recipes</a>
+      
+    <?php if(isset($_SESSION["user"])): ?>
+      <div class="dropdown">
+        <p  class="btn btn-primary dropbtn">Hello <?= $_SESSION["user"]["username"] ?></p>
+        <div class="dropdown-content">
+           <?php if(isset($_SESSION["user"]) && $_SESSION["user"]["role"] === 'admin'): ?>
+		         <a href="<?= URLROOT ?>/admin/home" class="navbar-link">Admin</a>
+            <?php endif; ?>
+          <a href="<?= URLROOT ?>/logOut" class="navbar-link">LogOut</a>       
+        </div>
+      </div>
+      
+    <?php else: ?>
+      <a href="<?= URLROOT ?>/login" class="btn btn-primary">Login</a>
+    <?php endif; ?>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>

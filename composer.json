@@ -8,6 +8,7 @@
   ],
   "autoload": {
     "files": [
+      "config/checkSession.php",
       "config/constants.php",
       "config/credentials.php",
       "config/utilities.php"
