@@ -81,7 +81,7 @@ require_once APPROOT . '/src/views/admin/include/header.php';
 							</td>
 							<td> <?= $recipe->number_visitors ?></td>
 							<td> <?= $recipe->created_at ?></td>
-							<td><button class="status completed">Edit</button><button class="status error">Remove</button></td>
+							<td><a href="<?= URLROOT ?>/admin/recipe/edit-recipe/<?= $recipe->id ?>"><button class="status completed">Edit</button></a> <a href="<?= URLROOT ?>/admin/recipe/remove/<?= $recipe->id ?>"><button class="status error">Remove</button></a></td>
 						</tr>
 					<?php $i++;
 					endforeach; ?>

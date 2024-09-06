@@ -19,7 +19,10 @@ $router->addRoute('registerUser', ['controller' => 'Register', 'action' => 'regi
 $router->addRoute('admin/recipe', ['controller' => 'Recipe', 'action' => 'recipeAdmin']);
 $router->addRoute('admin/recipe/add-recipe', ['controller' => 'Recipe', 'action' => 'viewAddRecipe']);
 $router->addRoute('admin/recipe/add-data-recipe', ['controller' => 'Recipe', 'action' => 'addRecipe']);
+$router->addRoute('admin/recipe/edit-data-recipe', ['controller' => 'Recipe', 'action' => 'editRecipe']);
 $router->addRoute('admin/recipe/uploadImageCk', ['controller' => 'Recipe', 'action' => 'uploadFileCkEditor']);
+$router->addRoute('admin/recipe/remove/{id:\d+}', ['controller' => 'Recipe', 'action' => 'remove']);
+$router->addRoute('admin/recipe/edit-recipe/{id:\d+}', ['controller' => 'Recipe', 'action' => 'viewEditRecipe']);
 
 
 

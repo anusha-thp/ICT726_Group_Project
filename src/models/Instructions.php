@@ -30,4 +30,12 @@ class Instructions
     return false;
   }
 
+  public function removeInstructions($id){
+    $this->db -> query("DELETE FROM instructions WHERE recipe_id = :id");
+    $this -> db -> bind(":id",$id);
+    if($this->db -> execute())
+      return true;
+    return false;
+  }
+
 }

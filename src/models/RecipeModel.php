@@ -45,6 +45,18 @@ class RecipeModel
     return $this -> db -> resultSet();
   }
 
+  public function getRecipeById($id){
+    $this -> db -> query("SELECT * FROM recipes WHERE id = :id");
+    $this -> db -> bind(':id', $id);
+    return $this -> db -> single();
+  }
+
+  public function getDetailsRecipe($id){
+    $this->db->query("SELECT * FROM recipes INNER JOIN instructions ON recipes.id = instructions.recipe_id WHERE recipes.id =:id");
+    $this->db->bind(':id', $id);
+    return $this -> db -> single();
+  }
+
   public function updateRecipe($title,$image,$description,$recommend, $id){
     $this->db->query("UPDATE recipes SET title = :title, image = :image, description = :description, isRecommend = :recommend WHERE  id = :id");
     $this->db->bind(':title', $title);
@@ -57,6 +69,7 @@ class RecipeModel
     return false;
   }
 
+  
   public function removeRecipe($id){
     $this->db->query("DELETE FROM recipes WHERE id = :id");
     $this->db->bind(':id', $id);
