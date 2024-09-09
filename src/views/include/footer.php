@@ -56,16 +56,16 @@
 
         <li>
           <address class="footer-text">
-            2nd Floor, Kim Hoan Building, 19 Duy Tan lane, Cau Giay district, Ha Noi city.
+          Sydney, Australia.
           </address>
         </li>
 
         <li>
-          <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
+          <a class="footer-link">tastytreasurescooking@email.com</a>
         </li>
 
         <li>
-          <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
+          <a class="footer-link">00 (123) 456 78 90</a>
         </li>
 
       </ul>

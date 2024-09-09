@@ -2,7 +2,7 @@
 // App Root
 define('APPROOT', dirname(dirname(__FILE__)));
 // URL Root
-define('URLROOT', 'http://localhost/foodcrud');
+define('URLROOT', 'http://localhost/ICT726_Group_Project');
 // Site Name
 define('SITENAME', 'Tasty Treasures Cookbook');
 
