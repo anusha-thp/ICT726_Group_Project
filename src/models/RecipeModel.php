@@ -41,7 +41,7 @@ class RecipeModel
   }
 
   public function getAllRecipePopular(){
-    $this->db->query("SELECT * FROM recipes ORDER BY number_visitors");
+    $this->db->query("SELECT * FROM recipes ORDER BY  number_visitors DESC, created_at DESC");
     return $this -> db -> resultSet();
   }
 

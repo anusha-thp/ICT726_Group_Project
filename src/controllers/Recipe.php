@@ -62,10 +62,12 @@ class Recipe
     $id = $param["id"];
     $recipe =  $this->recipeModel->getDetailsRecipe($id);
     $comment = $this -> comment -> getCommentsByRecipe($id);
+    
     if (!$recipe) {
       header('location: ' . URLROOT . '/admin', true, 302);
       exit();
     }
+    $this -> recipeModel -> increaseNumberVisitors($id);
     $data  = [
       "details" => $recipe,
       "comments" => $comment
@@ -73,6 +75,7 @@ class Recipe
     view('detailsRecipe',$data );
 
   }
+  
 
   public function viewEditRecipe($param)
   {
