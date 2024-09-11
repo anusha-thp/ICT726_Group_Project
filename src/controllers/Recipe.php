@@ -2,6 +2,7 @@
 
 namespace Controllers;
 
+use Models\Comments;
 use Models\Instructions;
 use Models\RecipeModel;
 use Models\Users;
@@ -11,11 +12,13 @@ class Recipe
   private $recipeModel;
   private $instructions;
   private $user;
+  private $comment;
   public function __construct()
   {
     $this->recipeModel = new RecipeModel;
     $this->instructions = new Instructions;
     $this->user = new Users;
+    $this -> comment = new Comments;
   }
   public function home()
   {
@@ -53,6 +56,22 @@ class Recipe
   {
     $this->checkAdmin();
     view('admin/addRecipes');
+  }
+
+  public function details($param){
+    $id = $param["id"];
+    $recipe =  $this->recipeModel->getDetailsRecipe($id);
+    $comment = $this -> comment -> getCommentsByRecipe($id);
+    if (!$recipe) {
+      header('location: ' . URLROOT . '/admin', true, 302);
+      exit();
+    }
+    $data  = [
+      "details" => $recipe,
+      "comments" => $comment
+    ];
+    view('detailsRecipe',$data );
+
   }
 
   public function viewEditRecipe($param)

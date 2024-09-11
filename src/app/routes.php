@@ -3,7 +3,12 @@
 // Static pages routes
 $router->addRoute('', ['controller' => 'Home', 'action' => 'home']);
 $router->addRoute('about', ['controller' => 'About', 'action' => 'home']);
+
 $router->addRoute('recipe', ['controller' => 'Recipe', 'action' => 'home']);
+$router->addRoute('recipe/{id:\d+}', ['controller' => 'Recipe', 'action' => 'details']);
+$router->addRoute('recipe/addComment', ['controller' => 'Comments', 'action' => 'addComment']);
+$router->addRoute('recipe/removeComment/{id:\d+}', ['controller' => 'Comments', 'action' => 'removeComment']);
+
 $router->addRoute('blog', ['controller' => 'Blog', 'action' => 'home']);
 $router->addRoute('contact', ['controller' => 'Contact', 'action' => 'home']);
 
