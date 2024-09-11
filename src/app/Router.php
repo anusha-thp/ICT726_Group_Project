@@ -93,6 +93,12 @@ class Router
    */
   public function redirect() : void
   {
+
+    if (!isset($this->params['controller']) || !isset($this->params['action'])) {
+      header('Location: ' . URLROOT);
+      exit;
+    }
+
     $controller = $this->getNamespace() . $this->params['controller'];
     $action = $this->capitalizeAction($this->params['action']);
 

@@ -5,6 +5,7 @@ require_once APPROOT . '/src/views/admin/include/header.php';
 ?>
 <?php require_once APPROOT . '/src/views/admin/include/sidebar.php'; ?>
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+<script src="<?= URLROOT ?>/js/valid-form.js?<?= time() ?>" defer ></script>
 
 <main>
     <div class="head-title">
@@ -31,7 +32,7 @@ require_once APPROOT . '/src/views/admin/include/header.php';
     <div class="table-data">
         <div class="formRecipe-main-wrapper">
             <div class="formRecipe-form-wrapper">
-                <form action="<?= URLROOT ?>/admin/recipe/edit-data-recipe" method="POST" enctype="multipart/form-data">
+                <form action="<?= URLROOT ?>/admin/recipe/edit-data-recipe" id="editRecipe" method="POST" enctype="multipart/form-data">
                     <input type="hidden" value="<?= $data["recipe"] -> id ?>" name="id">
                     <div class="formRecipe-steps">
                         <ul>

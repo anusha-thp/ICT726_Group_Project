@@ -9,7 +9,7 @@
   <meta name="description" content="This is a business Login account">
   <link rel="shortcut icon" href="<?= URLROOT ?>/img/logo.png" type="image/svg+xml">
   <link rel="stylesheet" href="<?= URLROOT ?>/css/login.css">
-
+  <script src="<?= URLROOT ?>/js/valid-form.js?<?= time() ?>" defer ></script>
 </head>
 <body>
   <div class="wrapper">
@@ -18,9 +18,9 @@
     <?php if(isset($data["message"])): ?>
       <p class="error-message"><?= $data["message"] ?></p>
     <?php endif; ?>
-    <form action="<?= URLROOT ?>/loginUser" method="POST">
-      <input type="text" placeholder="Enter username" name="username">
-      <input type="password" placeholder="Password" name="password">
+    <form action="<?= URLROOT ?>/loginUser" id="login" method="POST">
+      <input type="text" placeholder="Enter username" name="username" required>
+      <input type="password" placeholder="Password" name="password" required>
       <button type="submit">Sign in</button>
     </form>
     <p class="or">
