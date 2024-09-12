@@ -53,4 +53,12 @@ class Comments
 
         return false;
     }
+    public function removeCommentByRecipe($id){
+        $this->db -> query("DELETE FROM comments WHERE recipe_id = :id");
+        $this->db->bind(':id', $id);
+        if ($this->db->execute())
+            return true;
+
+        return false;
+    }
 }

@@ -51,7 +51,7 @@ require_once APPROOT . '/src/views/include/header.php';
                                         <h5><?= $comment->username ?></h5>
                                         <span class="is-mute"><?= $comment->created_at ?></span>
                                         <?php if(isset($_SESSION["user"]) && ($_SESSION["user"]["role"] === "admin" || $comment->username === $_SESSION["user"]["username"])): ?>
-                                            <a style="color:red" href="<?= URLROOT ?>/recipe/removeComment/<?= $comment -> id ?>"> Xoá comment</a>
+                                            <a style="color:red" href="<?= URLROOT ?>/recipe/removeComment/<?= $comment -> id ?>"> Remove comment</a>
                                         <?php endif; ?>
                                     </div>
                                     <p><?= $comment->comment ?></p>

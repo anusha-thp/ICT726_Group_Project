@@ -261,6 +261,7 @@ class Recipe
   public function remove($param)
   {
     $id = $param["id"];
+    $this -> comment -> removeCommentByRecipe($id);
     $this->instructions->removeInstructions($id);
     $this->recipeModel->removeRecipe($id);
     header('location: ' . URLROOT . '/admin/recipe', true, 302);
