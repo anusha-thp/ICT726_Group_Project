@@ -43,9 +43,11 @@ class Recipe
   {
     $this->checkAdmin();
     $recipes = $this->recipeModel->getAllRecipe();
+    $visitor = $this -> recipeModel->getVisitor();
+    $newRecipe = $this -> recipeModel->getNewRecipe();
     $data = [
-      "newRecipe" => 0,
-      "visitor" => 0,
+      "newRecipe" => $newRecipe,
+      "visitor" => $visitor ,
       "totalRecipe" => count($recipes),
       "recipes" => $recipes
     ];

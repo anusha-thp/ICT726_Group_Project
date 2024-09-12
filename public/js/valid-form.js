@@ -64,31 +64,22 @@ function validateFormRecipe(inputs, type) {
   const image = formData.get("image");
   const recommend = formData.get("recommend")?.trim();
   const description = formData.get("description")?.trim();
-  const editor = formData.get("editor")?.trim();
-
-  let messageError = "";
 
   if (!title || title.length < 5) {
-    messageError = "The title must be at least 5 characters long!";
+    return "The title must be at least 5 characters long!";
   }
 
   if (type === "add" && (!image || image.size === 0)) {
-    messageError = "Please upload an image!";
+    return "Please upload an image!";
   }
 
   if (!recommend || isNaN(recommend) || recommend < 1 || recommend > 5) {
-    messageError = "Please provide a valid recommendation between 1 and 5!";
+    return "Please provide a valid recommendation between 1 and 5!";
   }
 
   if (!description || description.length < 10) {
-    messageError = "The description must be at least 10 characters long!";
+    return "The description must be at least 10 characters long!";
   }
-
-  if (!editor) {
-    messageError = "Please provide editor information!";
-  }
-
-  return messageError;
 }
 
 function handleSubmitRecipe(event, type) {

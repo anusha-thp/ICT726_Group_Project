@@ -34,6 +34,24 @@ class RecipeModel
     $this->db->query("SELECT * FROM recipes ORDER BY id DESC");
     return $this -> db -> resultSet();
   }
+  public function getVisitor(){
+    $this->db->query("SELECT SUM(number_visitors) AS total_visitor FROM recipes");
+    $result = $this -> db -> single();
+    if($result){
+      return $result -> total_visitor;
+    }else{
+      return 0;
+    }
+  }
+  public function getNewRecipe(){
+    $this->db->query("SELECT COUNT(*) total_today FROm recipes WHERE DATE(created_at) = CURDATE()");
+    $result = $this -> db -> single();
+    if($result){
+      return $result -> total_today;
+    }else{
+      return 0;
+    }
+  }
 
   public function getRecipesRecommend(){
     $this->db->query("SELECT * FROM recipes WHERE isRecommend = 1 ORDER BY id DESC LIMIT 10");
