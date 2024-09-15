@@ -5,7 +5,9 @@
       <div class="footer-brand">
 
         <a href="#" class="logo">
-          <img src="<?= URLROOT ?>/img/logo.png" width="74" height="24" alt="<?= SITENAME ?> home">
+        <figure>
+          <img src="<?= URLROOT ?>/img/logo.png" width="74" height="24" loading="lazy" alt="<?= SITENAME ?> home">
+        </figure>
         </a>
 
         <p class="footer-text">

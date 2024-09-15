@@ -625,9 +625,10 @@ body {
   display: flex;
   gap: 20px;
   margin-bottom: 22px;
+  flex-wrap: wrap;
 }
 .formRecipe-input-flex > div {
-  width: 50%;
+  width: 100%;
 }
 .formRecipe-form-input {
   width: 100%;

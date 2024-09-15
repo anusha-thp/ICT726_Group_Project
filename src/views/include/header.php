@@ -22,14 +22,18 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="<?= URLROOT ?>/img/logo.png" width="74" height="24" alt="<?= SITENAME ?> home">
+      <figure>
+      <img src="<?= URLROOT ?>/img/logo.png" width="74" height="24" loading="lazy" alt="<?= SITENAME ?> home">
+      </figure>
       </a>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
           <a href="#" class="logo">
-            <img src="<?= URLROOT ?>/img/logo.png" width="74" height="24" alt="<?= SITENAME ?> home">
+          <figure>
+          <img src="<?= URLROOT ?>/img/logo.png" width="74" height="24" alt="<?= SITENAME ?> home">
+          </figure>
           </a>
 
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>

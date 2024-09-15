@@ -74,7 +74,9 @@ require_once APPROOT . '/src/views/admin/include/header.php';
                             </div>
                             <?php if (!empty($data["recipe"] -> image)) : ?>
                                 <div>
-                                    <img src="<?= URLROOT ?>/<?= $data["recipe"] -> image ?>" alt="<?= $data["recipe"] -> title ?>" style="max-width: 70px;"/>
+                                    <figure >
+                                        <img src="<?= URLROOT ?>/<?= $data["recipe"] -> image ?>" alt="<?= $data["recipe"] -> title ?>" loading="lazy" style="max-width: 150px;"/>
+                                    </figure>
                                 </div>
                             <?php endif; ?>
                         </div>
